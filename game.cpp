@@ -46,7 +46,7 @@ void Board::play(int action){ //moves, 1 = up, 2 = right, 3 = down, 4 = left
     left();
   }
   }
-//refered to code given by TA in lab to shift using a stack 
+
 
 bool Board::up()
 { vector<vector<int>> NewMatrix = matrix;
@@ -89,7 +89,7 @@ bool Board::up()
       Elements.push(0);
     }
   }
-  Elements.push(-1); //need to have code here to pass all cases (not included in code given by ta)
+  Elements.push(-1); 
   iterator += 1;
   //after all elements have been push into the stack
   //start removing i.e popping them back into the matrix
@@ -119,7 +119,7 @@ bool Board::up()
       return false;
      }  
 }
-//similar functions refered to up function given by ta in lab
+
 bool Board::left()
 { vector<vector<int>> NewMatrix = matrix;
   stack<int> Elements;
@@ -190,7 +190,7 @@ bool Board::left()
       return false;
      }  
 }
-//similar functions refered to up function given by ta in lab
+
 bool Board::down()
 { vector<vector<int>> NewMatrix = matrix;
   stack<int> Elements;
@@ -259,7 +259,7 @@ bool Board::down()
       return false;
      }  
 }
-//similar functions refered to up function given by ta in lab
+
 bool Board::right()
 { vector<vector<int>> NewMatrix = matrix;
   stack<int> Elements;
