@@ -4,11 +4,11 @@
 #include <stack>
 using namespace std;
 
-//refered to some code from lab and some peers
+
 string SolvingGame(int l, Board &gameBoard, string seq, ofstream& fileOut){
 
   
-  if(gameBoard.checkIfSolved()){ //if the board is solevd return the path used to solve it 
+  if(gameBoard.checkIfSolved()){ //if the board is solved return the path used to solve it 
     return seq;
   }
   else if(l <= 0 || gameBoard.Possible() == false) //if the board is not possible to solve, outfile "Impossible"
@@ -42,7 +42,7 @@ string SolvingGame(int l, Board &gameBoard, string seq, ofstream& fileOut){
 
 int main(int argc, char *argv[]){
 
-  ArgumentManager am(argc, argv); //argument manager implementation from dr.rizk ppts 
+  ArgumentManager am(argc, argv);  
   string inputName = am.get("input");
   string outputName = am.get("output");
   ofstream fileOut(outputName);
@@ -73,7 +73,7 @@ int main(int argc, char *argv[]){
   }
   else 
   {
-    path = SolvingGame(12,gameBoard,"",fileOut); //12 because the posisbel moves are only 12
+    path = SolvingGame(12,gameBoard,"",fileOut); //12 because the posisble moves are only 12
     if(path.substr(0, 10) == "Impossible" || path == "0")
     fileOut << "Impossible"; //the game is impossible to solve because more than 1 ele left over
     else
